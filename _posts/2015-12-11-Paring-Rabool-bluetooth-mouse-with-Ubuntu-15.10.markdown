@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Paring Raboo Blueooth Mouse with Ubuntu 15.10"
-date:   2015-03-18 10:36:29
+date:   2015-12-11 10:36:29
 categories: Bluetooth,Ubuntu 
 ---
 
