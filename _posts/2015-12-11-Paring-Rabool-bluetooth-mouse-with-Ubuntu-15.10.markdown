@@ -2,7 +2,7 @@
 layout: post
 title:  "Paring Raboo Blueooth Mouse with Ubuntu 15.10"
 date:   2015-12-11 10:36:29
-categories: Bluetooth,Ubuntu 
+categories: Bluetooth
 ---
 
 Yesterday, I purchased a Rapoo Bluetooth Mouse 6010B and tried to work with my Ubuntu 15.10. Sadly, it can be paried, but ubuntu told me "Connection failed". As a programmer knowning little about bluetooth, I used `hcidump` to capture a log and found nothing. Ubuntu seems pair with mouse successful and after a bunch of SDP negotitation, disconnect with mouse with no obvious reason. 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何在ubuntu 14.10下root GT-I9502 Samsung Galaxy S4 4.4.2 联通双卡版本
-tags: GT-I9502
+tags: Android
 ---
 
 最近,把自己的Galaxy S4升级到4.4.2，安装了Google Play Store和系统服务,系统环境是ubuntu 14.10.下面就是步骤.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using androidannotation with M2E
-tags: GT-I9502
+tags: AndroidDev
 ---
 
 Install ADT
