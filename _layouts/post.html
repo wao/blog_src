@@ -13,7 +13,7 @@ layout: default
   </div>
 
   <div class="tag">
-      Tags: {{ page | tags }}
+      Tags: {% for tag in page.tags %}<a href="/blog/tag/{{ tag | downcase }}.html">{{ tag }}</a> {% endfor %}
   </div>
 
   {% include comments.html %}
