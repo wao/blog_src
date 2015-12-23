@@ -2,7 +2,7 @@
 layout: post
 title:  "Using long with std::inner_product"
 date:   2015-03-18 10:36:29
-categories: c++ 
+tags: C++ 
 ---
 
 Today, I have write a problem which using `std::inner_product` to caculate inner product of two `std::vector<int>`. The code is like followings:

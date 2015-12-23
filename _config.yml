@@ -3,7 +3,7 @@ title: Think More
 email: yangchen@thinkmore.info
 description: > # this means to ignore newlines until "baseurl:"
     Personal thoughts and work log in software development.
-baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://wao.github.io" # the base hostname & protocol for your site
 twitter_username: yangchen
 github_username:  wao
@@ -12,7 +12,5 @@ github_username:  wao
 markdown: kramdown
 
 # Tagging
-gems: [jekyll-coffeescript, jekyll-watch, jekyll-assets]
-
 tag_page_layout: tag_page
 tag_page_dir: tag

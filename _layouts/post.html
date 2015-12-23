@@ -12,6 +12,10 @@ layout: default
     {{ content }}
   </div>
 
+  <div class="tag">
+      Tags: {{ page | tags }}
+  </div>
+
   {% include comments.html %}
 
 </article>

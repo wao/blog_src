@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using androidannotation with M2E
-tags: AndroidDev
+tags: Android Maven 
 ---
 
 Install ADT
