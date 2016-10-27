@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "smali开发纪要1"
+date:  Thu, 27 Oct 2016 22:34:05 +0800
+tags: androiddev
+---
+
+## Command to execute smali
+
+~~~
+    adb shell dalvikvm -cp /path/to/your/smali_compiled.zip YouClassName
+~~~
+
+## Compile Command
+
+~~~ bash
+    java -jar smali.jar assemble -o classes.dex HelloWorld.smali
+    zip YouZip.zip classes.dex
+~~~
+
+## HelloWorld sample smaili code
+
+~~~ smali
+.class public LHelloWorld;
+.super Ljava/lang/Object;
+.method public static main([Ljava/lang/String;)V
+    .locals 8
+    .prologue
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    const-string v1, "Hello World!"
+    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, "Good Bye!"
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     move-result-object v2
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    return-void
+.end method
+~~~
+
+## Code sample of android Log.v
+
+~~~ smali
+.method public static varargs d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 11
+
+    .prologue
+    .line 296
+
+    const-string v3, "YANGCHEN:"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-direct {v6,v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 297
+    if-nez p2, :cond_2
+    invoke-virtual {v6,p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
+
+    :goto_0
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v4
+
+  invoke-static {p0, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I 
+    return-void
+
+    .line 297
+    :cond_2
+    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+    invoke-virtual {v6,v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
+    goto :goto_0
+.end method
+~~~
+
+变参函数最后一个参数是 Object[] 类型,可以直接传给String.format使用.
