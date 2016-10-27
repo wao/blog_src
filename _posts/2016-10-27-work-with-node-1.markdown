@@ -20,6 +20,7 @@ tags: nodejs
 
 * collection的任意一个子model.save()都会激发collection的sync事件 
 * model.save()会出PUT请求,同时要求返回更新后model的json
+* BackboneView在切换parent()以后,event绑定会丢失,可以用`this.delegateEvents()`重新绑定事件.
 
 ## express 
 
